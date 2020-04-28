@@ -1,0 +1,48 @@
+package week03;
+public class RecursiveAPP{
+   public static long digits(long n)
+    {
+	long number=0;
+	if(n =0)
+	    { number = n;}
+	
+        return number+digits(n/10);
+    }
+    
+   public static long sumOfDigits(long n)
+    {
+	long number = 0;
+	long sum = 0;
+	while(n>0){
+	    number = n%10;
+	    sum +=number;
+	    n=n/10;
+	}
+	if (n<0){
+	    n=-n;
+	    while(n>0){
+		number =n%10;
+		sum +=number;
+		n=n/10;
+	    }
+	        sum = -sum;}
+	
+	return sum;
+    }
+    public static long sumOfDigits1(long n){
+	return 0;
+    }
+    
+    public static void main(String[] args){
+	long a;
+	long b;
+	long c;
+	a=digits(257);
+	System.out.println(a);
+	b=sumOfDigits(257);
+	System.out.println(b);
+	c=sumOfDigits(-257);
+	System.out.println(c);
+    }
+}
+

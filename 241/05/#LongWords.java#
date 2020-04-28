@@ -1,0 +1,33 @@
+package week05;
+import java.io.*;
+import java.util.Scanner;
+
+public class LongWords{
+	static final int max = 100;
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		int word_length=0;
+		double average=0;
+		int word_count=0;	
+		String [] words = null;
+		int sum = 0;
+		while(reader.hasNextLine()){
+			String line = reader.nextLine();
+			Scanner input = new Scanner(line);
+			while(input.hasNext() && word_count<max ){
+				words[word_count] = input.next();
+				word_count++;
+			}
+		}
+		for(int i=0;i<word_count;i++){
+			sum += words[i].length();
+		}
+		average = (double)sum/word_count;
+		for(;word_count>0;word_count--){
+			if(words[word_count].length()>average){
+				System.out.println(words[word_count]);
+			}
+		}
+	}
+
+}
